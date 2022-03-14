@@ -1,7 +1,14 @@
+import ComplexSearch from "../models/Recipe";
 import "./RecipeCard.css";
 
-const RecipeCard = () => {
-  return <div className="RecipeCard">RecipeCard works</div>;
+interface Props {
+  singleSearch: ComplexSearch
+};
+
+const RecipeCard = ({singleSearch}: Props) => {
+  return <div className="RecipeCard">
+    <p>{singleSearch.title}</p>
+  </div>;
 };
 
 export default RecipeCard;

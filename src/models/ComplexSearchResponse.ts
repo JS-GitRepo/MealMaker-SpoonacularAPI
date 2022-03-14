@@ -1,5 +1,5 @@
-import ComplexSearch from "./ComplexSearch";
+import Recipe from "./Recipe";
 
 export default interface ComplexSearchResponse {
-  results: ComplexSearch[];
+    results: Recipe[];
 }

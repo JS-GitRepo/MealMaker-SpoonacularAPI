@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import ComplexSearch from "../models/ComplexSearch";
-import Recipe from "../models/Recipe";
+import ComplexSearch from "../models/Recipe";
 import { getDefaultRecipes } from "../services/RecipeService";
 import "./Gallery.css";
 import RecipeCard from "./RecipeCard";
@@ -17,7 +16,7 @@ const Gallery = () => {
     <div className="Gallery">
       <ul>
         {recipes.map((recipe) => (
-          <RecipeCard key={recipe.title} />
+          <RecipeCard key={recipe.title} singleSearch={recipe} />
         ))}
       </ul>
     </div>
