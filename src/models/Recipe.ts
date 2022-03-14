@@ -1,11 +1,5 @@
-interface Ingredients {
-  information: string;
-}
-
 export default interface Recipe {
-  id: string;
+  id: number;
   title: string;
-  equipment: string;
-  ingredients: Ingredients;
   image: string;
 }
