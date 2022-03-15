@@ -1,33 +1,29 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Recipe from "../models/Recipe";
 import SingleRecipeResponse from "../models/SingleRecipeResponse";
-import { getDetailedRecipe } from "../services/RecipeService";
+import "./RecipeCard.css";
 
-import "./DetailedRecipeCard.css";
-import RecipeCard from "./RecipeCard";
+interface Props {
+  singleSearch: SingleRecipeResponse;
+}
 
-const DetailedRecipeCard = () => {
-  const [card, setCard] = useState<SingleRecipeResponse>();
-
-  const id: string | undefined = useParams().id;
-
-  useEffect(() => {
-    getDetailedRecipe(id!).then((response) => {
-      setCard(response);
-    });
-  }, [id]);
-
+const DetailedRecipeCard = ({ singleSearch }: Props) => {
+  const summaryString = singleSearch.summary;
+  const summaryHtmlNodes:any = new DOMParser().parseFromString(summaryString,"text/html").all;
+  const summaryHtmlArray:any = Array.from(summaryHtmlNodes);
+  const summaryInnerHtml = summaryHtmlArray.map((element:any)=> element.InnerHTML);
+  // const htmlNodes:any = summaryHtmlNodes.all;
+  // console.dir(summaryHtmlNodes);
+  console.log(summaryHtmlArray);
+  console.log(summaryHtmlArray[0]);
+  console.log(summaryInnerHtml);
   return (
-    <div className="DetailRecipeCard">
-      <div className="Details">
-        {card ? 
-        <p> {card.title}</p>
-       <img src={card.image} alt={card.title} />
-        : <p>loading</p>}
-      </div>
+    <div className="DetailedRecipeCard">
+      <p>{singleSearch.title}</p>
+      <img src={singleSearch.image} alt={singleSearch.title} />
+      {/* {singleSearch.summary} */}
+      {summaryHtmlNodes[2].textContent};
     </div>
   );
 };
-
 export default DetailedRecipeCard;

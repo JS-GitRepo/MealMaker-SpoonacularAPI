@@ -13,7 +13,6 @@ const RecipeCard = ({ singleSearch }: Props) => {
       <Link to={`/recipes/${encodeURIComponent(singleSearch.id)}/information`}>
         <img src={singleSearch.image} alt={singleSearch.title} />
       </Link>
-      <p>{singleSearch.id}</p>
     </div>
   );
 };
