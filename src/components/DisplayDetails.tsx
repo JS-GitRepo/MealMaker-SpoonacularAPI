@@ -8,8 +8,9 @@ import { getDetailedRecipe } from "../services/RecipeService";
 
 import "./DetailedRecipeCard.css";
 import RecipeCard from "./RecipeCard";
+import DetailedRecipeCard from "./DetailedRecipeCard";
 
-const DetailedRecipeCard = () => {
+const DisplayDetails = () => {
   const [card, setCard] = useState<SingleRecipeResponse>();
 
   const id: string | undefined = useParams().id;
@@ -23,10 +24,10 @@ const DetailedRecipeCard = () => {
   return (
     <div className="DetailRecipeCard">
       <div className="Details">
-        {card ? <DetailedRecipeCard singleGif={card} /> : <p>Loading</p>}
+        {card ? <DetailedRecipeCard singleSearch={card} /> : <p>Loading</p>}
       </div>
     </div>
   );
 };
 
-export default DetailedRecipeCard;
+export default DisplayDetails;

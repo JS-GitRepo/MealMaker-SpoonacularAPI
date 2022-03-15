@@ -8,9 +8,10 @@ import {
 
 import "./App.css";
 import DetailedRecipeCard from "./components/DetailedRecipeCard";
+import DisplayDetails from "./components/DisplayDetails";
 import Gallery from "./components/Gallery";
 import Header from "./components/Header";
-import ItemStack from "./components/ItemStack";
+import ItemStack from "./components/ItemGallery";
 import SearchBar from "./components/SearchBar";
 import SearchContainer from "./components/SearchContainer";
 
@@ -24,18 +25,14 @@ function App() {
           <Route path="/recipes/complexSearch" element={<Gallery />} />
           <Route
             path="/recipes/:id/information"
-            element={<DetailedRecipeCard />}
+            element={<DisplayDetails />}
           />
           {/* <Route path="/gifs/favorites" element={<Favorites />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
-
-      {/* <Header />
-      <Gallery />
       <SearchContainer />
-      <SearchBar />
-      <ItemStack /> */}
+      <ItemStack />
     </div>
   );
 }

@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ItemsContextProvider from './context/ItemsContextProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ItemsContextProvider>
+      <App />
+    </ItemsContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

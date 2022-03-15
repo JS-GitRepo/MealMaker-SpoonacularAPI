@@ -1,4 +1,3 @@
-
 interface Ingredient {
     name: string;
 }
