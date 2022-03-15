@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import ComplexSearch from "../models/Recipe";
+import Recipe from "../models/Recipe";
 import { getDefaultRecipes } from "../services/RecipeService";
 import "./Gallery.css";
 import RecipeCard from "./RecipeCard";
 
 const Gallery = () => {
-  const [recipes, setRecipe] = useState<ComplexSearch[]>([]);
+  const [recipes, setRecipe] = useState<Recipe[]>([]);
 
   useEffect(() => {
     getDefaultRecipes().then((res) => {
       setRecipe(res.results);
     });
-  });
+  }, []);
   return (
     <div className="Gallery">
       <ul>
