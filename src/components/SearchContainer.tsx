@@ -15,12 +15,16 @@ const SearchContainer = () => {
         addItem(e.target.value, "include")
         console.log("Pressed Enter on Include!")
       } else if (targetID === "exclude") {
+        addItem(e.target.value, "exclude")
         console.log("Pressed Enter on Exclude!")
       } else if (targetID === "equipment") {
+        addItem(e.target.value, "equipment")
         console.log("Pressed Enter on Equipment!")
-      } else if (targetID === "customSearch") {
-        console.log("Pressed Enter on customSearch!")
+      } else if (targetID === "custom") {
+        addItem(e.target.value, "custom")
+        console.log("Pressed Enter on custom!")
       }; 
+      e.target.value = "";
     }
   }
 
@@ -60,7 +64,7 @@ const SearchContainer = () => {
 
       <div className="search-custom">
       </div>
-        <input type="text" name="customSearch" id="customSearch" onKeyPress={inputHandler} placeholder="add custom search term..."/>
+        <input type="text" name="custom" id="custom" onKeyPress={inputHandler} placeholder="add custom search term..."/>
       </form>
   </div>;
 };

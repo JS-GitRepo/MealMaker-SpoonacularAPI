@@ -24,7 +24,7 @@ const DisplayDetails = () => {
   return (
     <div className="DetailRecipeCard">
       <div className="Details">
-        {card ? <DetailedRecipeCard singleSearch={card} /> : <p>Loading</p>}
+        {card ? <DetailedRecipeCard singleRecipe={card} /> : <p>Loading</p>}
       </div>
     </div>
   );

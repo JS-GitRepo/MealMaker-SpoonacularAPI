@@ -7,5 +7,6 @@ export default interface SingleRecipeResponse {
     id: number,
     title: string,
     image: string,
-    summary: string
+    summary: string,
+    sourceUrl: string
 };

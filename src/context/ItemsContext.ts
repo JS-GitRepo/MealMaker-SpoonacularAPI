@@ -1,13 +1,18 @@
 import { createContext } from "react";
+import Recipe from "../models/Recipe";
 import SearchItem from "../models/SearchItem";
 
 interface ItemsContextModel {
-    include: SearchItem[];
-    exclude: SearchItem[];
-    equipment: SearchItem[];
-    custom: SearchItem[];
+    include: String[];
+    exclude: String[];
+    equipment: String[];
+    custom: String[];
     allItems: SearchItem[];
+    favorites: Recipe[];
     addItem: (what:string , where:string) => void;
+    addFavorite: (recipe: Recipe) => void;
+    removeFavorite: (id: number) => void;
+    isFav: (id: number) => boolean;
 }
 
 const defaultValues: ItemsContextModel = {
@@ -16,7 +21,11 @@ const defaultValues: ItemsContextModel = {
     equipment: [],
     custom: [],
     allItems: [],
-    addItem: () => {}
+    favorites: [],
+    addItem: () => {},
+    addFavorite: () => {},
+    removeFavorite: () => {},
+    isFav: () => false,
 };
 
 const ItemsContext = createContext(defaultValues);
