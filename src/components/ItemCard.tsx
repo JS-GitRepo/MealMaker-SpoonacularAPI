@@ -1,16 +1,18 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import ItemsContext from "../context/ItemsContext";
 import Recipe from "../models/Recipe";
 import SearchItem from "../models/SearchItem";
 import "./RecipeCard.css";
 
 interface Props {
-  addedItem: SearchItem;
+  singleItem: SearchItem;
 }
 
-const ItemCard = ({ addedItem }: Props) => {
+const ItemCard = ({singleItem}: Props) => {
   return (
     <div className="ItemCard">
-      <p>{addedItem.title}</p>
+      <p>{singleItem.what}</p>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 export default interface SearchItem {
-    id?: number;
-    title: string;
-    category: string;
+    what: string;
+    where: string;
 }

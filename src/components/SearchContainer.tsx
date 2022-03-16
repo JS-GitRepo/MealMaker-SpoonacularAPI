@@ -1,5 +1,6 @@
 import { FormEvent, useContext, useState } from "react";
 import ItemsContext from "../context/ItemsContext";
+import ItemsContextProvider from "../context/ItemsContextProvider";
 import SearchItem from "../models/SearchItem";
 import "./SearchContainer.css";
 
@@ -11,6 +12,7 @@ const SearchContainer = () => {
     const targetID = e.target.id;
     if (e.key === "Enter") {
       if (targetID === "include") {
+        addItem(e.target.value, "include")
         console.log("Pressed Enter on Include!")
       } else if (targetID === "exclude") {
         console.log("Pressed Enter on Exclude!")
@@ -44,21 +46,21 @@ const SearchContainer = () => {
       <ul>
           <li>
             {/* <form> */}
-              <input type="text" name="include" id="include" placeholder="search..." onKeyPress={inputHandler}/>
+              <input type="text" name="include" id="include" placeholder="ingredient..." onKeyPress={inputHandler}/>
             {/* </form> */}
           </li>
           <li>
-            <input type="text" name="exclude" id="exclude" placeholder="search..." onKeyPress={inputHandler}/>
+            <input type="text" name="exclude" id="exclude" placeholder="ingredient..." onKeyPress={inputHandler}/>
           </li>
           <li>
-            <input type="text" name="equipment" id="equipment" placeholder="search..." onKeyPress={inputHandler}/>
+            <input type="text" name="equipment" id="equipment" placeholder="equipment..." onKeyPress={inputHandler}/>
           </li>
         </ul>
       </div>
 
       <div className="search-custom">
       </div>
-        <input type="text" name="customSearch" id="customSearch" onKeyPress={inputHandler}/>
+        <input type="text" name="customSearch" id="customSearch" onKeyPress={inputHandler} placeholder="add custom search term..."/>
       </form>
   </div>;
 };

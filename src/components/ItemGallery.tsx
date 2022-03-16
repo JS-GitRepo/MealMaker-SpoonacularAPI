@@ -1,20 +1,21 @@
 import "./ItemGallery.css";
 import plate from "../images/plate-side-profile.png";
 import SearchItem from "../models/SearchItem";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import ItemsContext from "../context/ItemsContext";
+import ItemCard from "./ItemCard";
 
 const ItemGallery = () => {
-  const [items, setItem] = useState<SearchItem[]>([]);
-
-  const submitHandler = () => {
-    
-  }
+  const {include, exclude, equipment, custom, allItems} = useContext(ItemsContext);
 
   return <div className="ItemGallery">
     <div className="added-items-container">
-      
+      <ul>
+        {/* {allItems.map((item)=> item.what)} */}
+        {allItems.map((item)=> <ItemCard singleItem={item}/> )}
+      </ul>
     </div>
-    <img src={plate} alt="Show Recipes Button" onClick={()=> submitHandler()} />
+    <img src={plate} alt="Show Recipes Button" />
     </div>;
 };
 

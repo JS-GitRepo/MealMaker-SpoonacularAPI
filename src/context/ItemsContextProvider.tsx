@@ -7,25 +7,28 @@ import ItemsContext from "./ItemsContext";
     }
  
     const ItemsContextProvider = ({ children }: Props) => {
-        const [included,setIncluded] = useState<string[]>([]);
-        const [excluded,setExcluded] = useState<string[]>([]);
-        const [equipment,setEquipment] = useState<string[]>([]);
-        const [custom,setCustom] = useState<string[]>([]);
+        const [include,setInclude] = useState<SearchItem[]>([]);
+        const [exclude,setExclude] = useState<SearchItem[]>([]);
+        const [equipment,setEquipment] = useState<SearchItem[]>([]);
+        const [custom,setCustom] = useState<SearchItem[]>([]);
+        const [allItems,setAllItems] = useState<SearchItem[]>([]);
 
         const addItem = (what: string, where: string): void => {
-            if (where === "included") {
-                setIncluded((prev)=> [...prev, what]);
-            } else if (where === "excluded") {
-                setExcluded((prev)=> [...prev, what]);
+            const Item:SearchItem = {what,where};
+            if (where === "include") {
+                setInclude((prev)=> [...prev, Item]);
+            } else if (where === "exclude") {
+                setExclude((prev)=> [...prev, Item]);
             } else if (where === "equipment") {
-                setEquipment((prev)=> [...prev, what]);
+                setEquipment((prev)=> [...prev, Item]);
             } else if (where === "custom") {
-                setCustom((prev)=> [...prev, what]);
+                setCustom((prev)=> [...prev, Item]);
             }
+            setAllItems((prev)=> [...prev, Item]);
         }
 
     return (
-        <ItemsContext.Provider value={{ included, excluded, equipment, custom, addItem }}>
+        <ItemsContext.Provider value={{ include, exclude, equipment, custom, addItem, allItems }}>
         {children}
         </ItemsContext.Provider>
     );
