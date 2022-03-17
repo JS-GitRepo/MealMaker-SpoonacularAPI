@@ -10,9 +10,11 @@ interface Props {
 }
 
 const ItemCard = ({singleItem}: Props) => {
+  const { removeItem } = useContext(ItemsContext);
   return (
     <div className={`ItemCard ${singleItem.where}Style`}>
       <p>{singleItem.what}</p>
+      <i className="fa-solid fa-xmark" onClick={()=>removeItem(singleItem.id!)}></i>
     </div>
   );
 };

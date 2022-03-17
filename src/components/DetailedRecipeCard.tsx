@@ -19,6 +19,7 @@ const DetailedRecipeCard = ({ singleRecipe }: Props) => {
   // console.log(summaryInnerHtml);
   return (
     <div className="DetailedRecipeCard">
+      <Link to={`/`}><i className="fa-solid fa-arrow-left"></i></Link>
       <p>{singleRecipe.title}</p>
       <img src={singleRecipe.image} alt={singleRecipe.title} />
       {/* {singleRecipe.summary} */}

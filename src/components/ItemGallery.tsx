@@ -8,13 +8,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { getUserSearch } from "../services/RecipeService";
 
 const ItemGallery = () => {
-  const {include, exclude, equipment, custom, allItems} = useContext(ItemsContext);
-  const [query,setQuery] = useState("");
+  const {allItems} = useContext(ItemsContext);
   const navigate = useNavigate();
-  let includeQuery = (include.length>0)? `&includeIngredients=${include.join()}`:"";
-  let excludeQuery = (exclude.length>0)? `&excludeIngredients=${exclude.join()}`:"";
-  let equipmentQuery = (equipment.length>0)? `&equipment=${equipment.join()}`:"";
-  let customQuery = (custom.length>0)? `&query=${custom.join()}`:"";
+
+  const includeObjects = allItems.filter((item)=> item.where === "include");
+  const includeStrings = includeObjects.map((item)=> item.what);
+  let includeQuery = (includeStrings.length>0)? `&includeIngredients=${includeStrings.join()}`:"";
+
+  const excludeObjects = allItems.filter((item)=> item.where === "exclude");
+  const excludeStrings = excludeObjects.map((item)=> item.what);
+  let excludeQuery = (excludeStrings.length>0)? `&excludeIngredients=${excludeStrings.join()}`:"";
+
+  const equipmentObjects = allItems.filter((item)=> item.where === "equipment");
+  const equipmentStrings = equipmentObjects.map((item)=> item.what);
+  let equipmentQuery = (equipmentStrings.length>0)? `&equipment=${equipmentStrings.join()}`:"";
+
+  const customObjects = allItems.filter((item)=> item.where === "custom");
+  const customStrings = customObjects.map((item)=> item.what);
+  let customQuery = (customStrings.length>0)? `&query=${customStrings.join()}`:"";
+
   let searchQuery = `${includeQuery}${excludeQuery}${equipmentQuery}${customQuery}`;
   // console.log(searchQuery.toString());
   // console.log(excludeQuery);
@@ -28,7 +40,7 @@ const ItemGallery = () => {
     <div className="added-items-container">
       <ul>
         {/* {allItems.map((item)=> item.what)} */}
-        {allItems.map((item)=> <ItemCard singleItem={item}/> )}
+        {allItems.map((item)=> <ItemCard key={item.id} singleItem={item}/> )}
       </ul>
     </div>
     <img src={plate} alt="Show Recipes Button" onClick={submitHandler}/>
