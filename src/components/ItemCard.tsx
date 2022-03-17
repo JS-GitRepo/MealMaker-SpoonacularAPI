@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ItemsContext from "../context/ItemsContext";
 import Recipe from "../models/Recipe";
 import SearchItem from "../models/SearchItem";
-import "./RecipeCard.css";
+import "./ItemCard.css";
 
 interface Props {
   singleItem: SearchItem;

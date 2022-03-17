@@ -29,9 +29,6 @@ const SearchContainer = () => {
   }
 
   return <div className="search-container">
-    SearchContainer works
-    <form className="search-form">
-
     <div className="search-labels">
         <ul>
           <li>
@@ -46,26 +43,27 @@ const SearchContainer = () => {
         </ul>
       </div>
 
-      <div className="search-inputs">
-      <ul>
-          <li>
-            {/* <form> */}
-              <input type="text" name="include" id="include" placeholder="ingredient..." onKeyPress={inputHandler}/>
-            {/* </form> */}
-          </li>
-          <li>
-            <input type="text" name="exclude" id="exclude" placeholder="ingredient..." onKeyPress={inputHandler}/>
-          </li>
-          <li>
-            <input type="text" name="equipment" id="equipment" placeholder="equipment..." onKeyPress={inputHandler}/>
-          </li>
-        </ul>
-      </div>
+    <div className="search-inputs">
+    <ul>
+        <li>
+            <input type="text" name="include" id="include" placeholder="enter..." onKeyPress={inputHandler}/>
+        </li>
+        <li>
+          <input type="text" name="exclude" id="exclude" placeholder="enter..." onKeyPress={inputHandler}/>
+        </li>
+        <li>
+          <input type="text" name="equipment" id="equipment" placeholder="enter..." onKeyPress={inputHandler}/>
+        </li>
+      </ul>
+    </div>
 
-      <div className="search-custom">
-      </div>
-        <input type="text" name="custom" id="custom" onKeyPress={inputHandler} placeholder="add custom search term..."/>
-      </form>
+    <div className="search-custom">
+      <ul>
+        <li>
+          <input type="text" name="custom" id="custom" onKeyPress={inputHandler} placeholder="add custom search term..."/>
+        </li>
+      </ul>
+    </div>
   </div>;
 };
 
