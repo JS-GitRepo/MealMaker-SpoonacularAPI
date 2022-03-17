@@ -1,20 +1,21 @@
 .ItemGallery {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
     box-sizing: border-box;
     align-items: center;
-    height: 250px;
-    width: 100px;
+    flex: 1;
+    width: 100vw;
 }
 
 .added-items-container {
     display: flex;
+    max-height: 210px;
     height: 150px;
     overflow: scroll;
-    flex: 3;
+    flex: 6;
     margin-top: 10px;
     padding: 0px 10px;
+    flex-direction: column-reverse;
 }
 
 /* .added-items-container ul {
@@ -24,7 +25,28 @@
 } */
 
 .submit-plate {
+    display: flex;
+    position: relative;
     flex: 1;
     width: 80%;
-    padding: 10px 0px;
+    padding: 0px 0px;
+    justify-content: center;
+    align-items: center;
 }
+
+.submit-plate img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.submit-plate p {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    z-index: 1;
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 5px;
+}
+
+

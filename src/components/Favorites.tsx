@@ -8,8 +8,9 @@ const Favorites = () => {
   const {favorites} = useContext(ItemsContext)
   
   return (
-    <div className="Gallery">
-      <ul>
+    <div className="Favorites">
+      <h2>Favorites</h2>
+      <ul className="favorites-card-list" >
         {favorites.map((recipe) => (
           <RecipeCard key={recipe.id} singleRecipe={recipe} />
         ))}

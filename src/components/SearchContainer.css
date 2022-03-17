@@ -15,11 +15,11 @@ input {
 .search-container  {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
     box-sizing: border-box;
     height: 90px;
-    width: 90vw;
+    width: 80vw;
 }
 
 .search-container ul li {
@@ -33,16 +33,18 @@ input {
     flex-direction: row;
     justify-content:center;
     text-align: center;
+    font-weight: 200;
+    font-size: 18px;
 }
 
 .search-labels ul {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
 }
 
 .search-labels ul li {
-    width: 76.5px;
+    width: 78px;
 }
 
 .search-inputs {
@@ -57,12 +59,12 @@ input {
 .search-inputs ul {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
 }
 
 .search-inputs ul li input{
     box-sizing: border-box;
-    width: 76.5px;
+    width: 78px;
 }
 
 .search-custom {
@@ -76,7 +78,7 @@ input {
 .search-custom ul{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
 }
 
 .search-custom ul li {
