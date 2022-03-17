@@ -22,10 +22,12 @@ const DetailedRecipeCard = ({ singleRecipe }: Props) => {
   // console.log(summaryInnerHtml);
   return (
     <div className="DetailedRecipeCard">
-      <Link to={`/`}>
-        <i className="fa-solid fa-arrow-left"></i>
-      </Link>
-      <p className="detail-title">{singleRecipe.title}</p>
+      <div className="detailed-title-bar">
+        <Link to={`/`}>
+          <i className="fa-solid fa-arrow-left"></i>
+        </Link>
+        <p className="detail-title">{singleRecipe.title}</p>
+      </div>
       <img src={singleRecipe.image} alt={singleRecipe.title} />
       {/* {singleRecipe.summary} */}
       <div className="detail-text">{summaryHtmlNodes[2].textContent}</div>
