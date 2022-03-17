@@ -1,4 +1,22 @@
 .Gallery {
   padding: 20px 0;
   height: 40vh;
+  width: 80vw;
+  /* box-sizing: border-box; */
+}
+
+.Gallery h2 {
+  text-align: center;
+}
+
+.card-list {
+  margin: 0px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: scroll;
+  width: 100vw;
+  height: 30vh;
+  box-sizing: border-box;
 }

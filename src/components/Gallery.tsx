@@ -26,6 +26,7 @@ const Gallery = () => {
 
   return (
     <div className="Gallery">
+      <h2>Trending Meals</h2>
       <ul className="card-list">
         {recipes.map((recipe) => (
           <RecipeCard key={recipe.id} singleRecipe={recipe} />
