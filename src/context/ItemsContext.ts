@@ -10,6 +10,7 @@ interface ItemsContextModel {
     allItems: SearchItem[];
     favorites: Recipe[];
     addItem: (what:string , where:string) => void;
+    removeItem: (id: number) => void;
     addFavorite: (recipe: Recipe) => void;
     removeFavorite: (id: number) => void;
     isFav: (id: number) => boolean;
@@ -23,6 +24,7 @@ const defaultValues: ItemsContextModel = {
     allItems: [],
     favorites: [],
     addItem: () => {},
+    removeItem: () => {},
     addFavorite: () => {},
     removeFavorite: () => {},
     isFav: () => false,

@@ -17,7 +17,10 @@ import ItemsContext from "./ItemsContext";
         const [favorites, setFavorites] = useState<Recipe[]>([]);
 
         const addItem = (what: string, where: string): void => {
-            const Item:SearchItem = {what,where};
+            const item:SearchItem = {what,where};
+            (allItems.length > 0) 
+                ? (item.id = allItems[allItems.length -1].id! +1)
+                : (item.id = 1);
             if (where === "include") {
                 setInclude((prev)=> [...prev, what]);
             } else if (where === "exclude") {
@@ -27,7 +30,14 @@ import ItemsContext from "./ItemsContext";
             } else if (where === "custom") {
                 setCustom((prev)=> [...prev, what]);
             }
-            setAllItems((prev)=> [...prev, Item]);
+            setAllItems((prev)=> [...prev, item]);
+        }
+
+        const removeItem = (id: number): void => {
+            setAllItems((prev)=> {
+                const index: number = prev.findIndex((item)=> item.id === id);
+                return [...prev.slice(0,index), ...prev.slice(index + 1)];
+            })
         }
 
         const addFavorite = (recipe: Recipe): void => {
@@ -45,7 +55,7 @@ import ItemsContext from "./ItemsContext";
 
 
     return (
-        <ItemsContext.Provider value={{ include, exclude, equipment, custom, favorites, allItems, addItem, addFavorite, removeFavorite, isFav}}>
+        <ItemsContext.Provider value={{ include, exclude, equipment, custom, favorites, allItems, addItem, removeItem, addFavorite, removeFavorite, isFav}}>
         {children}
         </ItemsContext.Provider>
     );
