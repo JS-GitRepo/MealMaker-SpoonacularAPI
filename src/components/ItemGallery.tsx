@@ -40,10 +40,10 @@ const ItemGallery = () => {
     <div className="added-items-container">
       <ul>
         {/* {allItems.map((item)=> item.what)} */}
-        {allItems.map((item)=> <ItemCard key={item.id} singleItem={item}/> )}
+        {allItems.slice(0).reverse().map((item)=> <ItemCard key={item.id} singleItem={item}/> )}
       </ul>
     </div>
-    <img src={plate} alt="Show Recipes Button" onClick={submitHandler}/>
+    <img className="submit-plate" src={plate} alt="Show Recipes Button" onClick={submitHandler}/>
     </div>;
 };
 
