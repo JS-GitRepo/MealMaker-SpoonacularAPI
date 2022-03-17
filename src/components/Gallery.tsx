@@ -7,12 +7,10 @@ import "./Gallery.css";
 import ItemGallery from "./ItemGallery";
 import RecipeCard from "./RecipeCard";
 
-
 const Gallery = () => {
   const [recipes, setRecipe] = useState<Recipe[]>([]);
   const [searchParams] = useSearchParams();
   const searchParamString = searchParams.toString();
-  
 
   useEffect(() => {
     if (searchParamString === "") {
@@ -20,15 +18,15 @@ const Gallery = () => {
         setRecipe(res.results);
       });
     } else if (searchParamString.length > 0) {
-      getUserSearch(searchParamString).then((res)=> {
+      getUserSearch(searchParamString).then((res) => {
         setRecipe(res.results);
-      })
+      });
     }
   }, [searchParamString]);
 
   return (
     <div className="Gallery">
-      <ul>
+      <ul className="card-list">
         {recipes.map((recipe) => (
           <RecipeCard key={recipe.id} singleRecipe={recipe} />
         ))}

@@ -1,0 +1,47 @@
+.card-list {
+  margin: 0px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  overflow-x: scroll;
+  width: 100vw;
+  height: 50vh;
+}
+
+.RecipeCard {
+  height: 150px;
+  width: 300px;
+  font-size: 10px;
+  margin: 0px 10px;
+}
+
+.RecipeCard p {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  padding: 2px;
+  color: white;
+  height: 40px;
+  z-index: 2;
+  margin: 0;
+}
+
+img {
+  height: 100px;
+  width: 125px;
+  z-index: 1;
+}
+
+.fa-heart {
+  display: block;
+  font-size: 20px;
+  position: relative;
+  bottom: 30px;
+  left: 75%;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+}
