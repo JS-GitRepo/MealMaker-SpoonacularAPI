@@ -11,7 +11,7 @@ interface Props {
 
 const ItemCard = ({singleItem}: Props) => {
   return (
-    <div className="ItemCard">
+    <div className={`ItemCard ${singleItem.where}Style`}>
       <p>{singleItem.what}</p>
     </div>
   );
