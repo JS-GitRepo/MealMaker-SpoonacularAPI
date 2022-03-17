@@ -1,7 +1,8 @@
 .RecipeCard {
   position: relative;
   height: 150px;
-  width: 300px;
+  width: 125px;
+  max-width: 125px;
   font-size: 10px;
   margin: 0px 10px;
 }

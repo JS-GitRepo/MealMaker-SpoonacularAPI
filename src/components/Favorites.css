@@ -2,12 +2,12 @@
     padding: 20px 0;
     flex: 1;
     width: 100vw;
-    overflow-x: scroll;
 }
 
 .Favorites h2 {
     text-align: center;
     color: rgb(44, 44, 44);
+    margin: 5px 0px;
 }
 
 .Favorites .favorites-card-list {
@@ -21,3 +21,9 @@
     height: 200px;
     box-sizing: border-box;
 }
+
+@media only screen and (min-width: 768px) {
+    .Favorites {
+        flex: 2;
+    }
+  }

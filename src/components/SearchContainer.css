@@ -12,6 +12,18 @@ input {
 }
 
 /* SPECIFICS */
+
+.SearchContainer .search-preface {
+    margin-bottom: 10px;
+}
+
+.SearchContainer .search-preface p {
+    text-align: center;
+    margin: 2px 0px;
+    font-weight: 200;
+    font-size: 20px;
+}
+
 .search-container  {
     display: flex;
     flex-direction: column;
@@ -88,4 +100,20 @@ input {
 .search-custom ul li input{
     width: 100%;
     box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .SearchContainer {
+        flex: 1;
+        width: 50%;
+        /* height: 120px; */
+        margin: 0px 5%;
+    }
+
+    .search-container {
+        width: 100%;
+        height: 120px;
+        margin: 0px;
+    }
 }

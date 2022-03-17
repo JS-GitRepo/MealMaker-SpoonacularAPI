@@ -28,7 +28,12 @@ const SearchContainer = () => {
     }
   }
 
-  return <div className="search-container">
+  return <div className="SearchContainer">
+    <div className="search-preface" >
+      <p>What's in your pantry?</p>
+      <p>Let us know here!</p>
+    </div>
+    <div className="search-container">
     <div className="search-labels">
         <ul>
           <li>
@@ -64,7 +69,8 @@ const SearchContainer = () => {
         </li>
       </ul>
     </div>
-  </div>;
+  </div>
+    </div>
 };
 
 export default SearchContainer;
