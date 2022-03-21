@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="Header">
-      <Link to={`/`}>
+      <Link to={`/`} aria-label="home-link">
         <div className="title-logo-container">
           <i className="fa-solid fa-burger"></i>
           <div className="title-container">
