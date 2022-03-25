@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/React-Spoonacular-API/static/css/main.c9e49dfc.css",
-    "main.js": "/React-Spoonacular-API/static/js/main.7b62c97a.js",
-    "static/js/787.8b421c57.chunk.js": "/React-Spoonacular-API/static/js/787.8b421c57.chunk.js",
-    "index.html": "/React-Spoonacular-API/index.html",
-    "main.c9e49dfc.css.map": "/React-Spoonacular-API/static/css/main.c9e49dfc.css.map",
-    "main.7b62c97a.js.map": "/React-Spoonacular-API/static/js/main.7b62c97a.js.map",
-    "787.8b421c57.chunk.js.map": "/React-Spoonacular-API/static/js/787.8b421c57.chunk.js.map"
+    "main.css": "/MealMaker-SpoonacularAPI/static/css/main.c9e49dfc.css",
+    "main.js": "/MealMaker-SpoonacularAPI/static/js/main.437607d7.js",
+    "static/js/787.8b421c57.chunk.js": "/MealMaker-SpoonacularAPI/static/js/787.8b421c57.chunk.js",
+    "index.html": "/MealMaker-SpoonacularAPI/index.html",
+    "main.c9e49dfc.css.map": "/MealMaker-SpoonacularAPI/static/css/main.c9e49dfc.css.map",
+    "main.437607d7.js.map": "/MealMaker-SpoonacularAPI/static/js/main.437607d7.js.map",
+    "787.8b421c57.chunk.js.map": "/MealMaker-SpoonacularAPI/static/js/787.8b421c57.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9e49dfc.css",
-    "static/js/main.7b62c97a.js"
+    "static/js/main.437607d7.js"
   ]
 }
